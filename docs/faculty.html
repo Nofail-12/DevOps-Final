@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Faculty | NeoTech Institute</title><link rel=stylesheet href=/admissions.b379a2e4.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css><style>.faculty-filters{background:var(--white);box-shadow:var(--shadow);border-radius:12px;margin-top:3rem;padding:2rem}.filter-group{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;display:grid}.filter-select{border:2px solid var(--primary-blue);border-radius:8px;padding:.9rem}.faculty-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:4rem 0;display:grid}.faculty-card{border-top:4px solid var(--primary-blue);background:gray;border-radius:16px;transition:transform .3s,box-shadow .3s;overflow:hidden;box-shadow:0 8px 20px #00000014}.faculty-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px #00000026}.faculty-header{background:linear-gradient(135deg,var(--primary-blue),var(--secondary-blue));color:var(--white);text-align:center;padding:2rem 1rem;position:relative}.faculty-avatar{border:4px solid var(--accent-gold);background:var(--light-gray);width:100px;height:100px;color:var(--primary-blue);border-radius:50%;justify-content:center;align-items:center;margin:1px auto 1rem;font-size:2rem;display:flex;box-shadow:0 4px 10px #0003}.faculty-body{padding:2rem 1.5rem 1.5rem}.faculty-body p{color:gray;margin:.4rem 0;font-size:.95rem}.specializations span{color:#000;background:#f0f4ff;border-radius:20px;padding:.35rem .75rem;font-size:.85rem;font-weight:600;transition:all .3s}.specializations span:hover{background:var(--primary-blue);color:#fff;cursor:default}.office-hours{border-left:4px solid var(--warning-orange);color:#444;background:#fff4e6;border-radius:8px;margin-top:1rem;padding:.8rem;font-size:.9rem}.research-areas{text-align:center;margin:4rem 0}.research-areas h3{color:var(--primary-blue);margin-bottom:.5rem;font-size:2rem}.research-areas p{color:#fff;margin-bottom:2rem;font-size:1rem}.research-areas .faculty-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;display:grid}.research-card{color:#fff;border-radius:16px;transition:transform .3s,box-shadow .3s;overflow:hidden;box-shadow:0 8px 20px #00000014}.research-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px #00000026}.research-header{text-align:center;padding:2rem 1rem 1rem;position:relative}.research-avatar{color:#fff;background:#fff3;border:2px solid #fff;border-radius:50%;justify-content:center;align-items:center;width:80px;height:80px;margin:1px auto 1rem;font-size:2rem;display:flex;box-shadow:0 4px 10px #0003}.research-body{text-align:center;padding:1.5rem;font-size:.95rem}.research-card.ai{background:linear-gradient(135deg,#4e54c8,#8f94fb)}.research-card.security{color:#000;background:linear-gradient(135deg,#f7971e,#ffd200)}.research-card.data{background:linear-gradient(135deg,#11998e,#38ef7d)}</style><body>
+
+
+<header class=neo-header>
+    <div class=neo-nav>
+        <div class=neo-logo>
+            <i class="fa-microchip fas"></i>
+            <span>NeoTech</span>
+        </div>
+
+        <nav class=neo-menu id=navMenu>
+            <a href=/index.html>Home</a>
+            <a href=/courses.html>Programs</a>
+            <a href=/faculty.html>Faculty</a>
+            <a href=/admissions.html>Admissions</a>
+            <a href=/contact.html>Contact</a>
+        </nav>
+
+        <button class=neo-menu-btn id=mobileMenuBtn>
+            <i class="fa-bars fas"></i>
+        </button>
+    </div>
+</header>
+
+
+<section class=neo-hero>
+    <div class=neo-hero-content>
+        <h1>Meet Our Faculty</h1>
+        <p>Experts, researchers, and mentors shaping the future of computing.</p>
+    </div>
+</section>
+
+
+<section class="container faculty-filters">
+    <h3>Find Faculty Members</h3>
+    <div class=filter-group>
+        <select id=specializationFilter class=filter-select>
+            <option value>All Specializations</option>
+            <option value=ai>Artificial Intelligence</option>
+            <option value=software>Software Engineering</option>
+            <option value=security>Cybersecurity</option>
+            <option value=data>Data Science</option>
+            <option value=systems>Computer Systems</option>
+        </select>
+
+        <select id=positionFilter class=filter-select>
+            <option value>All Positions</option>
+            <option value=professor>Professor</option>
+            <option value=associate>Associate Professor</option>
+            <option value=assistant>Assistant Professor</option>
+            <option value=lecturer>Lecturer</option>
+        </select>
+
+        <input id=nameFilter class=filter-select placeholder="Search by name">
+    </div>
+</section>
+
+
+<section class="container faculty-list">
+    <div class=faculty-grid>
+
+        
+        
+<div class=faculty-card data-specialization=software data-position=associate>
+    <div class=faculty-header>
+        <div class=faculty-avatar><i class="fa-user fas"></i></div>
+        <h3>Dr. Sarah Khan</h3>
+        <p>Associate Professor</p>
+    </div>
+    <div class=faculty-body>
+        <p><i class="fa-envelope fas"></i> skhan@neotech.edu</p>
+        <p><i class="fa-map-marker-alt fas"></i> CS Block – 214</p>
+
+        <div class=specializations>
+            <span>Software Architecture</span>
+            <span>Agile Methods</span>
+        </div>
+
+        <div class=office-hours>
+            <strong>Office Hours</strong><br>
+            Tue &amp; Thu — 1–3 PM
+        </div>
+    </div>
+</div>
+
+
+<div class=faculty-card data-specialization=security data-position=assistant>
+    <div class=faculty-header>
+        <div class=faculty-avatar><i class="fa-user fas"></i></div>
+        <h3>Mr. Ali Raza</h3>
+        <p>Assistant Professor</p>
+    </div>
+    <div class=faculty-body>
+        <p><i class="fa-envelope fas"></i> araza@neotech.edu</p>
+        <p><i class="fa-map-marker-alt fas"></i> CS Block – 118</p>
+
+        <div class=specializations>
+            <span>Network Security</span>
+            <span>Ethical Hacking</span>
+        </div>
+
+        <div class=office-hours>
+            <strong>Office Hours</strong><br>
+            Mon &amp; Wed — 11–1 PM
+        </div>
+    </div>
+</div>
+
+
+<div class=faculty-card data-specialization=data data-position=lecturer>
+    <div class=faculty-header>
+        <div class=faculty-avatar><i class="fa-user fas"></i></div>
+        <h3>Ms. Ayesha Malik</h3>
+        <p>Lecturer</p>
+    </div>
+    <div class=faculty-body>
+        <p><i class="fa-envelope fas"></i> amalik@neotech.edu</p>
+        <p><i class="fa-map-marker-alt fas"></i> CS Block – 109</p>
+
+        <div class=specializations>
+            <span>Data Analytics</span>
+            <span>Visualization</span>
+        </div>
+
+        <div class=office-hours>
+            <strong>Office Hours</strong><br>
+            Fri — 10–1 PM
+        </div>
+    </div>
+</div>
+
+
+<div class=faculty-card data-specialization=systems data-position=professor>
+    <div class=faculty-header>
+        <div class=faculty-avatar><i class="fa-user fas"></i></div>
+        <h3>Dr. Michael Lee</h3>
+        <p>Professor</p>
+    </div>
+    <div class=faculty-body>
+        <p><i class="fa-envelope fas"></i> mlee@neotech.edu</p>
+        <p><i class="fa-map-marker-alt fas"></i> CS Block – 330</p>
+
+        <div class=specializations>
+            <span>Operating Systems</span>
+            <span>Distributed Systems</span>
+        </div>
+
+        <div class=office-hours>
+            <strong>Office Hours</strong><br>
+            Tue — 3–5 PM
+        </div>
+    </div>
+</div>
+
+
+        
+
+    </div>
+</section>
+
+
+
+<section class="container research-areas">
+    <h3>Research Areas</h3>
+    <p>Our faculty lead cutting-edge research in these key areas.</p>
+
+    <div class=faculty-grid>
+        
+        <div class="ai research-card">
+            <div class=research-header>
+                <div class=research-avatar>
+                    <i class="fa-brain fas"></i>
+                </div>
+                <h3>Artificial Intelligence</h3>
+            </div>
+            <div class=research-body>
+                <p>Machine learning, computer vision, natural language processing, and robotics research.</p>
+            </div>
+        </div>
+
+        
+        <div class="research-card security">
+            <div class=research-header>
+                <div class=research-avatar>
+                    <i class="fa-shield-alt fas"></i>
+                </div>
+                <h3>Cybersecurity</h3>
+            </div>
+            <div class=research-body>
+                <p>Network security, cryptography, privacy-preserving technologies, and secure systems.</p>
+            </div>
+        </div>
+
+        
+        <div class="data research-card">
+            <div class=research-header>
+                <div class=research-avatar>
+                    <i class="fa-database fas"></i>
+                </div>
+                <h3>Data Science</h3>
+            </div>
+            <div class=research-body>
+                <p>Big data analytics, predictive modeling, business intelligence, and data mining.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer class=neo-footer>
+    <div class=neo-footer-grid>
+        <div>
+            <h3>NeoTech Institute</h3>
+            <p>School of Computing</p>
+            <p>Email: info@neotech.edu</p>
+        </div>
+
+        <div>
+            <h3>Quick Access</h3>
+            <a href=#>Programs</a>
+            <a href=#>Admissions</a>
+            <a href=#>Faculty</a>
+            <a href=#>Contact</a>
+        </div>
+
+        <div>
+            <h3>Connect</h3>
+            <div class=neo-socials>
+                <i class="fa-linkedin fab"></i>
+                <i class="fa-x-twitter fab"></i>
+                <i class="fa-instagram fab"></i>
+                <i class="fa-youtube fab"></i>
+            </div>
+        </div>
+    </div>
+
+    <p class=neo-copy>
+        © 2024 NeoTech Institute — Academic DevOps Project
+    </p>
+</footer>
+
+<script>const specializationFilter=document.getElementById("specializationFilter"),positionFilter=document.getElementById("positionFilter"),nameFilter=document.getElementById("nameFilter"),facultyCards=document.querySelectorAll(".faculty-card");function filterFaculty(){let e=specializationFilter.value.toLowerCase(),t=positionFilter.value.toLowerCase(),n=nameFilter.value.toLowerCase();facultyCards.forEach(i=>{let a=i.dataset.specialization,l=i.dataset.position,o=i.querySelector("h3").textContent.toLowerCase(),c=!n||o.includes(n);e&&a!==e||t&&l!==t||!c?i.style.display="none":i.style.display="block"})}specializationFilter.addEventListener("change",filterFaculty),positionFilter.addEventListener("change",filterFaculty),nameFilter.addEventListener("input",filterFaculty);const mobileMenuBtn=document.getElementById("mobileMenuBtn"),navMenu=document.getElementById("navMenu");mobileMenuBtn.addEventListener("click",()=>{navMenu.classList.toggle("active")});const currentPage=window.location.pathname.split("/").pop();document.querySelectorAll(".nav-menu a").forEach(e=>{e.getAttribute("href")===currentPage?e.classList.add("active"):e.classList.remove("active")});</script>
+
+
