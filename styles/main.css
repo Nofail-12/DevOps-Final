@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #000);
+    color: #e6f1ff;
+}
+
+/* NAVBAR */
+.neo-header {
+    background: rgba(10, 15, 25, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.neo-nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.neo-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00f5ff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.neo-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.neo-menu a {
+    text-decoration: none;
+    color: #e6f1ff;
+    position: relative;
+}
+
+.neo-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00f5ff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.neo-menu a:hover::after {
+    width: 100%;
+}
+
+.neo-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #00f5ff;
+}
+
+/* HERO */
+.neo-hero {
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.neo-hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.neo-hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #00f5ff, #8a2be2);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.neo-hero p {
+    margin: 1.5rem 0;
+    opacity: 0.9;
+}
+
+.neo-btn {
+    padding: 14px 40px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #00f5ff, #8a2be2);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.neo-hero-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #00f5ff;
+    filter: blur(200px);
+    opacity: 0.2;
+}
+
+/* STATS */
+.neo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 4rem auto;
+}
+
+.neo-stat-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.neo-stat-card h2 {
+    color: #00f5ff;
+    font-size: 2.5rem;
+}
+
+/* FEATURES */
+.neo-features {
+    padding: 5rem 2rem;
+}
+
+.neo-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.neo-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.neo-feature {
+    background: rgba(255,255,255,0.04);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.neo-feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0,245,255,0.3);
+}
+
+.neo-feature i {
+    font-size: 2.5rem;
+    color: #00f5ff;
+    margin-bottom: 1rem;
+}
+
+/* NEWS & EVENTS */
+.neo-updates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.neo-news-item,
+.neo-event-card {
+    background: rgba(255,255,255,0.04);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.neo-footer {
+    background: #020617;
+    padding: 3rem 2rem 1rem;
+}
+
+.neo-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.neo-footer a {
+    display: block;
+    color: #e6f1ff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.neo-socials i {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    color: #00f5ff;
+}
+
+.neo-copy {
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .neo-menu {
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 1rem;
+    }
+
+    .neo-menu.active {
+        display: flex;
+    }
+
+    .neo-menu-btn {
+        display: block;
+    }
+
+    .neo-updates {
+        grid-template-columns: 1fr;
+    }
+
+    .neo-hero h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* COURSES PAGE */
+.neo-search {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+.neo-search input {
+    width: min(600px, 90%);
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 1rem;
+}
+
+.neo-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.neo-tab {
+    padding: 0.7rem 1.6rem;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid #00f5ff;
+    color: #00f5ff;
+    cursor: pointer;
+}
+
+.neo-tab.active {
+    background: linear-gradient(135deg, #00f5ff, #8a2be2);
+    color: black;
+}
+
+.neo-courses {
+    padding: 0 2rem 5rem;
+}
+
+.neo-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.neo-course-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    backdrop-filter: blur(12px);
+    transition: 0.4s;
+}
+
+.neo-course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0,245,255,0.3);
+}
+
+.neo-course-code {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #00f5ff;
+    color: black;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.neo-course-meta,
+.neo-course-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.neo-badge {
+    background: rgba(0,245,255,0.2);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+/* STRUCTURE */
+.neo-structure {
+    padding: 5rem 2rem;
+}
+
+.neo-structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.neo-structure-card {
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+}
+
+.neo-structure-card i {
+    font-size: 2.5rem;
+    color: #00f5ff;
+    margin-bottom: 1rem;
+}

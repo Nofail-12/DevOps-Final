@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs | NeoTech Institute</title>
+
+<link rel="stylesheet" href="../styles/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="neo-header">
+    <div class="neo-nav">
+        <div class="neo-logo">
+            <i class="fas fa-brain"></i>
+            <span>NeoTech</span>
+        </div>
+
+        <nav class="neo-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Programs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="neo-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="neo-hero" style="min-height: 70vh;">
+    <div class="neo-hero-content">
+        <h1>Academic Programs & Specializations</h1>
+        <p>
+            Explore a future-driven curriculum crafted to develop elite computing
+            professionals across emerging technology domains.
+        </p>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<section class="neo-search">
+    <input type="text" id="courseSearch" placeholder="Search by title, code, or instructor...">
+</section>
+
+<!-- FILTER TABS -->
+<section class="neo-tabs">
+    <button class="neo-tab active" data-filter="all">All Tracks</button>
+    <button class="neo-tab" data-filter="foundation">Foundations</button>
+    <button class="neo-tab" data-filter="ai">Artificial Intelligence</button>
+    <button class="neo-tab" data-filter="software">Software Systems</button>
+    <button class="neo-tab" data-filter="security">Cybersecurity</button>
+    <button class="neo-tab" data-filter="data">Data Science</button>
+</section>
+
+<!-- COURSES -->
+<section class="neo-courses">
+    <div class="neo-course-grid">
+
+        <!-- COURSE -->
+        <div class="neo-course-card" data-category="foundation">
+            <span class="neo-course-code">CS101</span>
+            <h3>Programming Foundations</h3>
+            <p>Core programming principles using Python with algorithmic thinking.</p>
+            <div class="neo-course-meta">
+                <span>3 Credits</span>
+                <span>Dr. Sarah Chen</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>No Prerequisite</span>
+                <span class="neo-badge">Fall / Spring</span>
+            </div>
+        </div>
+
+        <div class="neo-course-card" data-category="ai">
+            <span class="neo-course-code">CS401</span>
+            <h3>Machine Learning Systems</h3>
+            <p>Supervised & unsupervised models, neural networks, and evaluation.</p>
+            <div class="neo-course-meta">
+                <span>4 Credits</span>
+                <span>Dr. James Wilson</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>CS301, MATH250</span>
+                <span class="neo-badge">Spring</span>
+            </div>
+        </div>
+
+        <div class="neo-course-card" data-category="software">
+            <span class="neo-course-code">CS301</span>
+            <h3>Software Architecture</h3>
+            <p>Engineering scalable systems using modern development practices.</p>
+            <div class="neo-course-meta">
+                <span>3 Credits</span>
+                <span>Prof. Michael Brown</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>CS201</span>
+                <span class="neo-badge">Fall / Spring</span>
+            </div>
+        </div>
+
+        <div class="neo-course-card" data-category="security">
+            <span class="neo-course-code">CS451</span>
+            <h3>Cyber Defense & Networks</h3>
+            <p>Cryptography, intrusion detection, and secure networks.</p>
+            <div class="neo-course-meta">
+                <span>4 Credits</span>
+                <span>Dr. Lisa Park</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>CS351</span>
+                <span class="neo-badge">Fall</span>
+            </div>
+        </div>
+
+        <div class="neo-course-card" data-category="data">
+            <span class="neo-course-code">CS501</span>
+            <h3>Big Data Engineering</h3>
+            <p>Distributed analytics using Spark, Hadoop, and cloud pipelines.</p>
+            <div class="neo-course-meta">
+                <span>4 Credits</span>
+                <span>Dr. Robert Kim</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>CS401, STAT350</span>
+                <span class="neo-badge">Fall / Spring</span>
+            </div>
+        </div>
+
+        <div class="neo-course-card" data-category="ai">
+            <span class="neo-course-code">CS502</span>
+            <h3>Natural Language Intelligence</h3>
+            <p>Deep learning techniques for human language processing.</p>
+            <div class="neo-course-meta">
+                <span>3 Credits</span>
+                <span>Dr. Amanda Lee</span>
+            </div>
+            <div class="neo-course-footer">
+                <span>CS401</span>
+                <span class="neo-badge">Spring</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROGRAM STRUCTURE -->
+<section class="neo-structure">
+    <h2 class="neo-section-title">Degree Structure</h2>
+
+    <div class="neo-structure-grid">
+        <div class="neo-structure-card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Core Curriculum</h3>
+            <p>45 Credits</p>
+        </div>
+
+        <div class="neo-structure-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Specialization Tracks</h3>
+            <p>18 Credits</p>
+        </div>
+
+        <div class="neo-structure-card">
+            <i class="fas fa-rocket"></i>
+            <h3>Capstone Project</h3>
+            <p>6 Credits</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="neo-footer">
+    <div class="neo-footer-grid">
+        <div>
+            <h3>NeoTech Institute</h3>
+            <p>School of Computing</p>
+            <p>Email: info@neotech.edu</p>
+        </div>
+
+        <div>
+            <h3>Quick Access</h3>
+            <a href="#">Programs</a>
+            <a href="#">Admissions</a>
+            <a href="#">Faculty</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div>
+            <h3>Connect</h3>
+            <div class="neo-socials">
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <p class="neo-copy">
+        © 2024 NeoTech Institute — Academic DevOps Project
+    </p>
+</footer>
+
+
+<script>
+/* FILTER */
+document.querySelectorAll('.neo-tab').forEach(tab => {
+    tab.onclick = () => {
+        document.querySelectorAll('.neo-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+        document.querySelectorAll('.neo-course-card').forEach(card => {
+            card.style.display =
+                filter === 'all' || card.dataset.category === filter ? 'block' : 'none';
+        });
+    };
+});
+
+/* SEARCH */
+document.getElementById('courseSearch').addEventListener('input', e => {
+    const value = e.target.value.toLowerCase();
+    document.querySelectorAll('.neo-course-card').forEach(card => {
+        card.style.display =
+            card.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+    });
+});
+
+/* MOBILE MENU */
+document.getElementById("mobileMenuBtn").onclick = () => {
+    document.getElementById("navMenu").classList.toggle("active");
+};
+</script>
+
+</body>
+</html>

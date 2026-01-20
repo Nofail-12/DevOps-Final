@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions | NeoTech Institute</title>
+
+<!-- MAIN GLOBAL STYLES -->
+<link rel="stylesheet" href="../styles/main.css">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- ADMISSIONS PAGE ONLY CSS -->
+<style>
+/* ========== ADMISSIONS PAGE ========== */
+.admissions-container {
+    padding: 4rem 0;
+}
+
+/* HERO */
+.neo-hero {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: #fff;
+    padding: 6rem 2rem 4rem 2rem;
+    text-align: center;
+}
+
+.neo-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.neo-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--accent-gold);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #f2c94c;
+    transform: translateY(-2px);
+}
+
+/* PROGRAM CARDS */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.program-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.program-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.program-header p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.95rem;
+}
+
+.program-body {
+    padding: 1.5rem;
+}
+
+.program-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.program-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 0.95rem;
+}
+
+.program-features li:last-child {
+    border-bottom: none;
+}
+
+.program-features i {
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+}
+
+/* REQUIREMENTS CARDS */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.requirement-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.requirement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.requirement-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.requirement-card ul {
+    padding-left: 1.2rem;
+}
+
+.requirement-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 4rem auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--primary-blue);
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 55%;
+}
+
+.timeline-content {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 20px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--white);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--white);
+}
+
+.timeline-date {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* DEADLINES */
+.deadline-card {
+    background: var(--white);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.deadline-card.important {
+    border-left-color: var(--danger-red);
+    background: #fff3f3;
+}
+
+.deadline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+.application-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-top: 4rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 2px solid var(--light-gray);
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+}
+
+.submit-btn {
+    background: var(--primary-blue);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+/* FINANCIAL AID CARDS */
+.grid-financial {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.grid-financial .card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.grid-financial .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.grid-financial i {
+    margin-bottom: 1rem;
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0 !important;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .timeline-content::after {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="neo-header">
+    <div class="neo-nav">
+        <div class="neo-logo">
+            <i class="fas fa-microchip"></i>
+            <span>NeoTech</span>
+        </div>
+        <nav class="neo-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Programs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="admissions.html" class="active">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="neo-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="neo-hero">
+    <div class="neo-hero-content">
+        <h1>Start Your Journey With Us</h1>
+        <p>Join our vibrant community of innovators, thinkers, and problem-solvers. Applications for Fall 2025 are now open!</p>
+        <a href="#apply" class="cta-button">Apply Now <i class="fas fa-paper-plane"></i></a>
+    </div>
+</section>
+
+<!-- ADMISSIONS CONTENT -->
+<section class="admissions-container container">
+    <!-- PROGRAMS OFFERED -->
+    <h2 style="color: var(--primary-blue); text-align: center;">Degree Programs</h2>
+    <p style="text-align: center; color: gray; margin-bottom: 3rem;">Choose from our comprehensive range of undergraduate and graduate programs</p>
+
+    <div class="programs-grid">
+        <!-- Program 1 -->
+        <div class="program-card">
+            <div class="program-header">
+                <h3>Bachelor of Science</h3>
+                <p>Computer Science</p>
+            </div>
+            <div class="program-body">
+                <p>A comprehensive 4-year program covering fundamentals and advanced topics in computing.</p>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Duration: 4 years</li>
+                    <li><i class="fas fa-check"></i> Credits: 120</li>
+                    <li><i class="fas fa-check"></i> Specializations Available</li>
+                    <li><i class="fas fa-check"></i> Internship Required</li>
+                </ul>
+                <a href="#" class="cta-button" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Learn More</a>
+            </div>
+        </div>
+        <!-- Program 2 -->
+        <div class="program-card">
+            <div class="program-header">
+                <h3>Master of Science</h3>
+                <p>Computer Science</p>
+            </div>
+            <div class="program-body">
+                <p>Advanced graduate program with research and thesis options in specialized areas.</p>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Duration: 2 years</li>
+                    <li><i class="fas fa-check"></i> Thesis/Non-thesis tracks</li>
+                    <li><i class="fas fa-check"></i> Research Opportunities</li>
+                    <li><i class="fas fa-check"></i> Industry Partnerships</li>
+                </ul>
+                <a href="#" class="cta-button" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Learn More</a>
+            </div>
+        </div>
+        <!-- Program 3 -->
+        <div class="program-card">
+            <div class="program-header">
+                <h3>PhD Program</h3>
+                <p>Computer Science</p>
+            </div>
+            <div class="program-body">
+                <p>Doctoral program for aspiring researchers and academics in cutting-edge CS fields.</p>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Duration: 4-5 years</li>
+                    <li><i class="fas fa-check"></i> Full Funding Available</li>
+                    <li><i class="fas fa-check"></i> Research Focus</li>
+                    <li><i class="fas fa-check"></i> Teaching Opportunities</li>
+                </ul>
+                <a href="#" class="cta-button" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admission Requirements -->
+    <h2 style="color: var(--primary-blue); margin: 4rem 0 2rem 0; text-align: center;">Admission Requirements</h2>
+    <div class="requirements-grid">
+        <div class="requirement-card">
+            <h3><i class="fas fa-user-graduate"></i> Undergraduate</h3>
+            <ul>
+                <li>High school diploma or equivalent</li>
+                <li>Minimum GPA: 3.0/4.0</li>
+                <li>SAT score: 1200+ or ACT: 25+</li>
+                <li>Math & Science coursework</li>
+                <li>Personal statement</li>
+                <li>Letters of recommendation (2)</li>
+            </ul>
+        </div>
+        <div class="requirement-card">
+            <h3><i class="fas fa-graduation-cap"></i> Graduate</h3>
+            <ul>
+                <li>Bachelor's degree in CS or related field</li>
+                <li>Minimum GPA: 3.2/4.0</li>
+                <li>GRE score: 310+ (optional for 2025)</li>
+                <li>Statement of purpose</li>
+                <li>Letters of recommendation (3)</li>
+                <li>Resume/CV</li>
+                <li>Research proposal (PhD only)</li>
+            </ul>
+        </div>
+        <div class="requirement-card">
+            <h3><i class="fas fa-globe-americas"></i> International Students</h3>
+            <ul>
+                <li>All standard requirements</li>
+                <li>TOEFL: 90+ or IELTS: 7.0+</li>
+                <li>Transcript evaluation</li>
+                <li>Financial documentation</li>
+                <li>Visa documentation</li>
+                <li>Health insurance</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Timeline & Deadlines -->
+    <!-- Reuse your timeline and deadline HTML as is; cards styled above -->
+
+    <!-- Application Form -->
+    <!-- Reuse your form HTML; styled above -->
+
+    <!-- Financial Aid -->
+    <!-- Reuse your financial aid section; grid-financial styling applied -->
+
+</section>
+
+<!-- Footer -->
+<footer class="neo-footer">
+    <div class="neo-footer-grid">
+        <div>
+            <h3>NeoTech Institute</h3>
+            <p>School of Computing</p>
+            <p>Email: info@neotech.edu</p>
+        </div>
+        <div>
+            <h3>Quick Access</h3>
+            <a href="#">Programs</a>
+            <a href="#">Admissions</a>
+            <a href="#">Faculty</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <div class="neo-socials">
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+    <p class="neo-copy">© 2024 NeoTech Institute — Academic DevOps Project</p>
+</footer>
+
+<!-- JS -->
+<script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navMenu = document.getElementById("navMenu");
+    mobileMenuBtn.addEventListener("click", () => navMenu.classList.toggle("active"));
+
+    // Form submission
+    document.getElementById('admissionForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Thank you! Our admissions team will contact you shortly.');
+        this.reset();
+    });
+</script>
+</body>
+</html>

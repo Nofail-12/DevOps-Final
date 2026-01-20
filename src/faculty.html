@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty | NeoTech Institute</title>
+
+    <!-- MAIN GLOBAL STYLES -->
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+
+    <style>
+        /* FACULTY FILTERS */
+.faculty-filters {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.filter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.filter-select {
+    padding: 0.9rem;
+    border-radius: 8px;
+    border: 2px solid var(--primary-blue);
+}
+
+/* FACULTY GRID */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+/* ======================
+   FACULTY CARDS STYLING
+   ====================== */
+
+.faculty-card {
+    background: gray;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid var(--primary-blue); /* colored top border for distinction */
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Header with gradient + avatar */
+.faculty-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+/* Avatar circle with shadow */
+.faculty-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-gold);
+    margin: -60px auto 1rem; /* overlap header for a 3D effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: var(--light-gray);
+    color: var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: 1px;
+}
+
+/* Body */
+.faculty-body {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.faculty-body p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+    color:gray ;
+}
+
+/* Specializations as colored badges */
+.specializations span {
+    background: #f0f4ff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.specializations span:hover {
+    background: var(--primary-blue);
+    color: #fff;
+    cursor: default;
+}
+
+/* Office hours */
+.office-hours {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #fff4e6;
+    border-left: 4px solid var(--warning-orange);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* ======================
+   RESEARCH AREAS CARDS
+   ====================== */
+
+.research-areas {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.research-areas h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.research-areas p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+/* Grid layout same as faculty cards */
+.research-areas .faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Card styling */
+.research-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+}
+
+.research-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Header inside card */
+.research-header {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    position: relative;
+}
+
+/* Avatar circle with icon */
+.research-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: -50px auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: 1px;
+}
+
+/* Body text */
+.research-body {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    
+}
+
+/* Different gradients for each research area */
+.research-card.ai {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+
+.research-card.security {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #000; /* darker text for contrast */
+}
+
+.research-card.data {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- HEADER (FROM main.css) -->
+<header class="neo-header">
+    <div class="neo-nav">
+        <div class="neo-logo">
+            <i class="fas fa-microchip"></i>
+            <span>NeoTech</span>
+        </div>
+
+        <nav class="neo-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Programs</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="neo-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="neo-hero">
+    <div class="neo-hero-content">
+        <h1>Meet Our Faculty</h1>
+        <p>Experts, researchers, and mentors shaping the future of computing.</p>
+    </div>
+</section>
+
+<!-- FILTERS -->
+<section class="faculty-filters container">
+    <h3>Find Faculty Members</h3>
+    <div class="filter-group">
+        <select id="specializationFilter" class="filter-select">
+            <option value="">All Specializations</option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="software">Software Engineering</option>
+            <option value="security">Cybersecurity</option>
+            <option value="data">Data Science</option>
+            <option value="systems">Computer Systems</option>
+        </select>
+
+        <select id="positionFilter" class="filter-select">
+            <option value="">All Positions</option>
+            <option value="professor">Professor</option>
+            <option value="associate">Associate Professor</option>
+            <option value="assistant">Assistant Professor</option>
+            <option value="lecturer">Lecturer</option>
+        </select>
+
+        <input type="text" id="nameFilter" class="filter-select" placeholder="Search by name">
+    </div>
+</section>
+
+<!-- FACULTY GRID -->
+<section class="container faculty-list">
+    <div class="faculty-grid">
+
+        <!-- FACULTY CARD -->
+        <!-- FACULTY CARD -->
+<div class="faculty-card" data-specialization="software" data-position="associate">
+    <div class="faculty-header">
+        <div class="faculty-avatar"><i class="fas fa-user"></i></div>
+        <h3>Dr. Sarah Khan</h3>
+        <p>Associate Professor</p>
+    </div>
+    <div class="faculty-body">
+        <p><i class="fas fa-envelope"></i> skhan@neotech.edu</p>
+        <p><i class="fas fa-map-marker-alt"></i> CS Block – 214</p>
+
+        <div class="specializations">
+            <span>Software Architecture</span>
+            <span>Agile Methods</span>
+        </div>
+
+        <div class="office-hours">
+            <strong>Office Hours</strong><br>
+            Tue & Thu — 1–3 PM
+        </div>
+    </div>
+</div>
+
+<!-- FACULTY CARD -->
+<div class="faculty-card" data-specialization="security" data-position="assistant">
+    <div class="faculty-header">
+        <div class="faculty-avatar"><i class="fas fa-user"></i></div>
+        <h3>Mr. Ali Raza</h3>
+        <p>Assistant Professor</p>
+    </div>
+    <div class="faculty-body">
+        <p><i class="fas fa-envelope"></i> araza@neotech.edu</p>
+        <p><i class="fas fa-map-marker-alt"></i> CS Block – 118</p>
+
+        <div class="specializations">
+            <span>Network Security</span>
+            <span>Ethical Hacking</span>
+        </div>
+
+        <div class="office-hours">
+            <strong>Office Hours</strong><br>
+            Mon & Wed — 11–1 PM
+        </div>
+    </div>
+</div>
+
+<!-- FACULTY CARD -->
+<div class="faculty-card" data-specialization="data" data-position="lecturer">
+    <div class="faculty-header">
+        <div class="faculty-avatar"><i class="fas fa-user"></i></div>
+        <h3>Ms. Ayesha Malik</h3>
+        <p>Lecturer</p>
+    </div>
+    <div class="faculty-body">
+        <p><i class="fas fa-envelope"></i> amalik@neotech.edu</p>
+        <p><i class="fas fa-map-marker-alt"></i> CS Block – 109</p>
+
+        <div class="specializations">
+            <span>Data Analytics</span>
+            <span>Visualization</span>
+        </div>
+
+        <div class="office-hours">
+            <strong>Office Hours</strong><br>
+            Fri — 10–1 PM
+        </div>
+    </div>
+</div>
+
+<!-- FACULTY CARD -->
+<div class="faculty-card" data-specialization="systems" data-position="professor">
+    <div class="faculty-header">
+        <div class="faculty-avatar"><i class="fas fa-user"></i></div>
+        <h3>Dr. Michael Lee</h3>
+        <p>Professor</p>
+    </div>
+    <div class="faculty-body">
+        <p><i class="fas fa-envelope"></i> mlee@neotech.edu</p>
+        <p><i class="fas fa-map-marker-alt"></i> CS Block – 330</p>
+
+        <div class="specializations">
+            <span>Operating Systems</span>
+            <span>Distributed Systems</span>
+        </div>
+
+        <div class="office-hours">
+            <strong>Office Hours</strong><br>
+            Tue — 3–5 PM
+        </div>
+    </div>
+</div>
+
+
+        <!-- COPY MORE CARDS SAME STRUCTURE -->
+
+    </div>
+</section>
+
+<!-- RESEARCH AREAS -->
+<!-- RESEARCH AREAS -->
+<section class="container research-areas">
+    <h3>Research Areas</h3>
+    <p>Our faculty lead cutting-edge research in these key areas.</p>
+
+    <div class="faculty-grid">
+        <!-- AI -->
+        <div class="research-card ai">
+            <div class="research-header">
+                <div class="research-avatar">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Artificial Intelligence</h3>
+            </div>
+            <div class="research-body">
+                <p>Machine learning, computer vision, natural language processing, and robotics research.</p>
+            </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="research-card security">
+            <div class="research-header">
+                <div class="research-avatar">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Cybersecurity</h3>
+            </div>
+            <div class="research-body">
+                <p>Network security, cryptography, privacy-preserving technologies, and secure systems.</p>
+            </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="research-card data">
+            <div class="research-header">
+                <div class="research-avatar">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Data Science</h3>
+            </div>
+            <div class="research-body">
+                <p>Big data analytics, predictive modeling, business intelligence, and data mining.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- FOOTER (SAME AS INDEX) -->
+<footer class="neo-footer">
+    <div class="neo-footer-grid">
+        <div>
+            <h3>NeoTech Institute</h3>
+            <p>School of Computing</p>
+            <p>Email: info@neotech.edu</p>
+        </div>
+
+        <div>
+            <h3>Quick Access</h3>
+            <a href="#">Programs</a>
+            <a href="#">Admissions</a>
+            <a href="#">Faculty</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div>
+            <h3>Connect</h3>
+            <div class="neo-socials">
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <p class="neo-copy">
+        © 2024 NeoTech Institute — Academic DevOps Project
+    </p>
+</footer>
+
+<script>
+    // ===============================
+// FACULTY PAGE FILTERING SCRIPT
+// ===============================
+
+const specializationFilter = document.getElementById("specializationFilter");
+const positionFilter = document.getElementById("positionFilter");
+const nameFilter = document.getElementById("nameFilter");
+const facultyCards = document.querySelectorAll(".faculty-card");
+
+// Main filter function
+function filterFaculty() {
+    const specialization = specializationFilter.value.toLowerCase();
+    const position = positionFilter.value.toLowerCase();
+    const nameQuery = nameFilter.value.toLowerCase();
+
+    facultyCards.forEach(card => {
+        const cardSpecialization = card.dataset.specialization;
+        const cardPosition = card.dataset.position;
+        const cardName = card.querySelector("h3").textContent.toLowerCase();
+
+        const matchSpecialization =
+            !specialization || cardSpecialization === specialization;
+
+        const matchPosition =
+            !position || cardPosition === position;
+
+        const matchName =
+            !nameQuery || cardName.includes(nameQuery);
+
+        if (matchSpecialization && matchPosition && matchName) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// Event listeners
+specializationFilter.addEventListener("change", filterFaculty);
+positionFilter.addEventListener("change", filterFaculty);
+nameFilter.addEventListener("input", filterFaculty);
+
+// ===============================
+// MOBILE NAV TOGGLE
+// ===============================
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const navMenu = document.getElementById("navMenu");
+
+mobileMenuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+// ===============================
+// ACTIVE NAV LINK
+// ===============================
+
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+    } else {
+        link.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+</html>
