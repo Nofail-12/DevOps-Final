@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/*.html --dist-dir ./dist",
-    "start": "node index.js"
+    "build": "parcel build src/index.html --dist-dir dist --public-url /DevOps-Final/",
+    "start": "parcel src/index.html"
   },
   "author": "",
   "license": "ISC",
